@@ -100,5 +100,3 @@ export const selectTitle = (state: RootState) => state.posts.currentPost.title;
 export const selectDescription = (state: RootState) =>
   state.posts.currentPost.description;
 export const selectBody = (state: RootState) => state.posts.currentPost.body;
-
-export default postSlice.reducer;

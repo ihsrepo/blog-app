@@ -1,3 +1,1 @@
-import postReducer from "./postsSlice";
-
-export { postReducer };
+export * from "./postsSlice";
