@@ -1,2 +1,3 @@
-export { Navbar } from "./Navbar";
-export { Layout } from "./Layout";
+export { Header } from "./Header";
+export { Container } from "./Container";
+export { Main } from "./Main";

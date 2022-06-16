@@ -1,10 +1,3 @@
-export {
-  userSlice,
-  updateUserName,
-  updatePassword,
-  login,
-  logout,
-  deleteUser,
-  refreshToken,
-} from "./userSlice";
-export * from "./postsSlice";
+import postReducer from "./postsSlice";
+
+export { postReducer };

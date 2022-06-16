@@ -5,7 +5,6 @@ import {
   createSelector,
 } from "@reduxjs/toolkit";
 import type { RootState } from "store";
-import { axiosPublic } from "utils";
 
 const nameSpace = "posts";
 
@@ -53,8 +52,8 @@ const initialState: PostState = {
 export const fetchPosts = createAsyncThunk(
   `${nameSpace}/fetchPosts`,
   async () => {
-    const response = await axiosPublic(`posts`);
-    return response.data;
+    const response = await fetch(`http://localhost:3001/posts`);
+    return (await response.json()) as Post[];
   }
 );
 
@@ -101,3 +100,5 @@ export const selectTitle = (state: RootState) => state.posts.currentPost.title;
 export const selectDescription = (state: RootState) =>
   state.posts.currentPost.description;
 export const selectBody = (state: RootState) => state.posts.currentPost.body;
+
+export default postSlice.reducer;
