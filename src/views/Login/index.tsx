@@ -1,8 +1,15 @@
-import React, { FC, useCallback } from "react";
+import React, { FC, useCallback, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "store";
 import { updateUserName, updatePassword, login } from "features";
 
 export const Login: FC = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetch("http://localhost:3001/posts");
+    };
+    fetchData();
+  }, []);
+
   const username = useAppSelector((state) => state.userData.username);
   const password = useAppSelector((state) => state.userData.password);
 

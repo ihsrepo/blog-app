@@ -7,3 +7,4 @@ export {
   deleteUser,
   refreshToken,
 } from "./userSlice";
+export * from "./postsSlice";

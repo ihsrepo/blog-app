@@ -1,16 +1,19 @@
 import React from "react";
 import { Navbar, Layout } from "components";
 import { Login, Users } from "views";
-import { useAppSelector } from "store";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  const user = useAppSelector((state) => state?.userData?.user);
   return (
     <div className="bg-gray-100 h-full">
       <Navbar />
       <Layout>
-        {!user && <Login />}
-        {user && <Users />}
+        <Router>
+          <Switch>
+            <Route path="/" component={Login} />
+            <Route path="/users" component={Users} />
+          </Switch>
+        </Router>
       </Layout>
     </div>
   );
